@@ -1,0 +1,113 @@
+{{>header}}
+
+<body>
+    {{!-- {{>navbar}} --}}
+<div>
+
+        {{>navbar}}
+
+        <header >
+            <div >
+                <div >
+                    {{!-- <h1 class="display-4 fw-bolder">Shop in style</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p> --}}
+                    <img src="873.jpg" alt="cover" width="1350" height="350">
+                </div>
+            </div>
+            <style>
+                
+                .grid-container {
+                width: 95%;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1em;
+                
+                @media (min-width: 52em) {
+                    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  }
+}
+
+            </style>
+        </header>
+
+          <section class="py-5">
+              
+            <div class="container px-4 px-lg-5 mt-5">
+                
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" >
+                   
+                    <div class="grid-container">
+                        {{#each books}}
+                        <div class="card h-10">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{{this.cphoto}}" alt="..." />
+                            
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{this.title}}</h5>
+                                    <!-- Product price-->
+                                    
+                                    <p>{{this.uname}}</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/books/{{this.id}}">Detailed view </a></div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+         {{!-- <div class = "col-sm-8">
+                                    {{#each books}}
+                                    <h5 class="fw-bolder">{{this.title}}</h5>
+                                    <p>{{this.uname}}</p>
+                                    <p>{{this.cphoto}}</p>
+                                    <p>{{this.book}}</p>
+                                    {{/each}}
+                                    </div> --}}
+</div>
+
+{{!-- 
+
+    <div class="container">
+ <div class="row">
+     <div class = "col-sm-4"> 
+         <div class="list-group">
+             {{#each users}}
+            <a href="/profile/{{this.id}}" class="list-group-item list-group-item-action">{{this.name}}</a>
+            {{/each}}
+         </div>
+     </div>
+
+     <div class = "col-sm-8">
+
+         <form action="/submitpost" method="post">
+         <textarea row = "12" col="12" name="upost"></textarea>
+         <button class="btn btn-primary">Post Now</button>
+         </form>
+
+        {{#each status}}
+        <b>{{this.uname}}</b>
+        <p>{{this.post}}</p>
+        {{/each}}
+
+     </div>
+ </div>
+    </div>
+
+        <li class="nav-item">
+        <a class="nav-link" href="/login">login</a>
+      </li> --}}
+         
+      {{>footer}}
+</body>
+</html>
